@@ -7,18 +7,6 @@ from datetime import datetime
 
 User = get_user_model()
 
-# Create your models here.
-
-
-# class Product(models.Model):
-#     name = models.CharField(max_length=255)
-#     price = models.CharField(max_length=50)
-#     image_url = models.URLField(blank=True, null=True)
-#     scraped_at = models.DateTimeField(auto_now_add=True)
-
-#     def __str__(self):
-#         return self.name
-
 
 class Author(models.Model):
     author = models.CharField(max_length=250)

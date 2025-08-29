@@ -40,7 +40,7 @@ class Command(BaseCommand):
 
                     author_slug = slugify(author)
                     author_object, _ = Author.objects.get_or_create(
-                        slug=author_slug, defaults={"author": author}
+                        slug=author_slug, author=author
                     )
 
                     quote_object, _ = Quote.objects.get_or_create(
@@ -91,10 +91,10 @@ class Command(BaseCommand):
 
                 soup = BeautifulSoup(response.text, "html.parser")
 
-                author_title = soup.find("h3", class_="author-title")
+                # author_title = soup.find("h3", class_="author-title")
 
-                if author_title:
-                    author.author = author_title.text
+                # if author_title:
+                #     author.author = author_title.text
 
                 author_born_date = soup.find("span", class_="author-born-date")
 
